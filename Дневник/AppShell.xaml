@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Дневник.Views"
+       Title="Дневник"
+       x:Class="Дневник.AppShell"   
+       FlyoutBackground="#D1E4FA"
+       xmlns:common ="clr-namespace:Дневник.Common"
+              
+      >
+
+    <!--Не допилил приложение, очень сырое, сорри(((-->
+
+    <!--Стилизация FlyoutItems-->
+    <Shell.Resources>
+        <Style
+            TargetType="Layout"
+            ApplyToDerivedTypes="True"
+            Class="FlyoutItemLayoutStyle">
+        <Setter
+            Property="HeightRequest"
+            Value="75" />
+        <Setter
+            Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup
+                    x:Name="CommonStates">
+                    <VisualState
+                        x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter
+                                Property="BackgroundColor"
+                                Value="#D1E4FA"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState
+                        x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter
+                                Property="BackgroundColor"
+                                Value="#BEDCFF"
+                                />
+
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState
+                        x:Name="Disabled">
+                        <VisualState.Setters>
+
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+
+    </Style>
+        
+        
+        <!--Сэндвич-->
+    </Shell.Resources>
+    <Shell.FlyoutIcon>
+        <FontImageSource
+            FontFamily="iconFont"
+            Glyph="{x:Static common:IconFont.Menu}"
+            Color="#040404"
+            Size="32"
+            
+            >
+
+        </FontImageSource>
+    </Shell.FlyoutIcon>
+    <!--Шапка-->
+    <Shell.FlyoutHeader
+        >
+            <StackLayout Orientation="Horizontal" BackgroundColor="#D1E4FA" HeightRequest="160"  >
+                <Frame BackgroundColor="#D1E4FA" HeightRequest="100" WidthRequest="90" HorizontalOptions="Start" VerticalOptions="Center" HasShadow="False">
+                <Image x:Name="Header_image" Aspect="AspectFill"  />
+                    </Frame>
+                <Label Text="Дневник" FontSize="28" FontAttributes="Bold" VerticalOptions="Center" ></Label>
+               
+       </StackLayout>
+
+    </Shell.FlyoutHeader>
+    
+   <!--FlyoutItems-->
+   <FlyoutItem Title="Главная"
+                Icon="home.png">
+        <ShellContent
+                ContentTemplate="{DataTemplate local:ItemsPage}" />
+    </FlyoutItem>
+     
+
+    
+
+</Shell>

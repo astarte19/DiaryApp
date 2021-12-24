@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Дневник.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Новая запись"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="#D1E4FA"
+            >
+    <ContentPage.Content>
+        <StackLayout Spacing="25" Padding="24"  >
+            <Label Text="Заголовок" FontSize="24" FontAttributes="Bold"  />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="20" Placeholder="Заголовок" PlaceholderColor="#7B7B7B"  BackgroundColor="#D1E4FA" />
+            <Label Text="Текст" FontSize="24" FontAttributes="Bold"  />
+            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="20" Margin="0" Placeholder="Основной текст" PlaceholderColor="#7B7B7B" BackgroundColor="#D1E4FA" />
+           
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="Отмена" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"  BackgroundColor="#66A3EA" FontSize="20" ></Button>
+                <Button Text="Добавить" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" FontSize="20" ></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
